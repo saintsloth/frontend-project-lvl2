@@ -5,3 +5,4 @@
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/9d3021ca28d17be92c61/test_coverage)](https://codeclimate.com/github/saintsloth/frontend-project-lvl2/test_coverage)
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/9d3021ca28d17be92c61/maintainability)](https://codeclimate.com/github/saintsloth/frontend-project-lvl2/maintainability)
