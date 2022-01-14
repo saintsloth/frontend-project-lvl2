@@ -1,0 +1,39 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "[![Actions Status](https://github.com/saintsloth/frontend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/saintsloth/frontend-project-lvl2/actions)",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps",
+    "prepublishOnly": "npm run build",
+    "test": "npx -n --experimental-vm-modules jest --watch"
+  },
+  "bin": {
+    "gendiff": "bin/gendiff.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saintsloth/frontend-project-lvl2.git"
+  },
+  "author": "Duck",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saintsloth/frontend-project-lvl2/issues"
+  },
+  "homepage": "https://github.com/saintsloth/frontend-project-lvl2#readme",
+  "dependencies": {
+    "commander": "^8.3.0",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.7",
+    "@babel/core": "^7.7.7",
+    "@babel/node": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "eslint": "^8.6.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "jest": "^27.4.7"
+  }
+}
