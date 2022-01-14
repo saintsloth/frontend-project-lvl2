@@ -14,7 +14,7 @@ test('gendiff-test', () => {
   const filepath1 = getFixturePath('file1.json');
   const filepath2 = getFixturePath('file2.json')
   const result = gendiff(filepath1, filepath2);
-  const expectedResult = fs.readFileSync('/home/duck/WebstormProjects/frontend-project-lvl2/__fixtures__/expectedResult', 'utf8');
+  const expectedResult = fs.readFileSync(getFixturePath('expectedResult'), 'utf8');
 
   expect(result).toEqual(expectedResult);
 });
