@@ -6,3 +6,6 @@ publish:
 
 install:
 	npm ci
+
+test:
+	npx jest
