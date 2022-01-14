@@ -8,4 +8,4 @@ install:
 	npm ci
 
 test:
-	npx jest
+	npx jest -n --experimental-modules --no-warnings
