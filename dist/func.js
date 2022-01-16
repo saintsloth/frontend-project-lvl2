@@ -54,4 +54,4 @@ const gendiff = (filepath1, filepath2) => {
 
 var _default = gendiff;
 exports.default = _default;
-//# sourceMappingURL=func.js.map
+//# sourceMappingURL=getDiff.js.map

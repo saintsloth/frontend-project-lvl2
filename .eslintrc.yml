@@ -6,4 +6,8 @@ extends:
 parserOptions:
   ecmaVersion: 13
   sourceType: module
-rules: {}
+rules: {
+  import/extensions: 'off',
+  import/prefer-default-export: 'off',
+  no-lonely-if: 'off'
+}
