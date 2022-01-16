@@ -31,7 +31,7 @@ export const getDiffStylish = (obj1, obj2) => {
   result = result.replace(/,\s/g, '\n');
   result = result.replace(/"/g, '');
   result = result.replace(/\s\s\+/g, '+');
-  result = result.replace(/\s\s-/g, '-');
   result = result.replace(/:\n/g, ': \n');
+  result = result.replace(/\s\s-/g, '-');
   return result;
 };
