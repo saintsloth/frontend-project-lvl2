@@ -1,6 +1,6 @@
 import { getDiffPlain } from './getDiffPlain.js';
-import { getDiffStylish } from './getDiffStylish.js';
 import { getDiffJson } from './getDiffJson.js';
+import {getDiffStylish} from './getDiffStylish.js';
 
 export default (obj1, obj2, format) => {
   switch (format) {
