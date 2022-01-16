@@ -17,4 +17,6 @@ program.parse(process.argv);
 const options = program.opts();
 if (options.version) console.log('version 1.0.0');
 
+export default getDiff;
+
 
