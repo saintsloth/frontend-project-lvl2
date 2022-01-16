@@ -5,7 +5,7 @@ import { getDiffStylish } from './getDiffStylish.js';
 export default (obj1, obj2, format) => {
   switch (format) {
     case 'plain':
-      return getDiffPlain(obj1, obj2);
+      return getDiffPlain(obj1, obj2).slice(0, -1);
     case 'json':
       return getDiffJson(obj1, obj2);
     default:
