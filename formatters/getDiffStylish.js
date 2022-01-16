@@ -1,16 +1,5 @@
 import _ from 'lodash';
 
-export const getDiffStylish = (obj1, obj2, start = '    ') => {
-  let result = getDiff(obj1, obj2);
-  result = JSON.stringify(result, null, 4);
-  result = result.replace(/ ""/g, '');
-  result = result.replace(/,\s/g, '\n');
-  result = result.replace(/"/g, '');
-  result = result.replace(/\s\s\+/g, '+');
-  result = result.replace(/\s\s-/g, '-');
-  return result;
-};
-
 const getDiff = (obj1, obj2) => {
   const keys = _.union(_.keys(obj1), _.keys(obj2)).sort();
   const result = {};
@@ -32,5 +21,17 @@ const getDiff = (obj1, obj2) => {
       }
     }
   });
+  return result;
+};
+
+export const getDiffStylish = (obj1, obj2) => {
+  let result = getDiff(obj1, obj2);
+  result = JSON.stringify(result, null, 4);
+  result = result.replace(/ ""/g, '');
+  result = result.replace(/,\s/g, '\n');
+  result = result.replace(/"/g, '');
+  result = result.replace(/\s\s\+/g, '+');
+  result = result.replace(/\s\s-/g, '-');
+  result = result.replace(/:\n/g, ': \n');
   return result;
 };
