@@ -10,19 +10,22 @@ const getDiff = (obj1, obj2) => {
     const [, value1] = findKey1 ?? '';
     const [, value2] = findKey2 ?? '';
     if (_.isObject(value1) && _.isObject(value2)) {
-      acc[`${key}`] = getDiff(value1, value2);
-      return loop(tail, acc);
-    } else {
-      if (value1 === value2) {
-        acc[`${key}`] = value1;
-        return loop(tail, acc);
-      } else {
-        if (findKey1) acc[`- ${key}`] = value1;
-        if (findKey2) acc[`+ ${key}`] = value2;
-        return loop(tail, acc);
-      }
+      return loop(tail, _.set(acc, key, getDiff(value1, value2)));
     }
-  }
+    if (value1 === value2) {
+      return loop(tail, _.set(acc, key, value1));
+    }
+    if (findKey1 && findKey2) {
+      return loop(tail, _.set(_.set(acc, `- ${key}`, value1), `+ ${key}`, value2));
+    }
+    if (findKey1) {
+      return loop(tail, _.set(acc, `- ${key}`, value1));
+    }
+    if (findKey2) {
+      return loop(tail, _.set(acc, `+ ${key}`, value2));
+    }
+    return 'never';
+  };
 
   return loop(keys);
 };
