@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 const getDiffTree = (obj1, obj2) => {
-  const keys = _.union(_.keys(obj1), _.keys(obj2)).sort();
+  const keys = _.sortBy(_.union(_.keys(obj1), _.keys(obj2)));
   const result = {};
   keys.forEach((key) => {
     const findKey1 = _.find(_.entries(obj1), ([key1]) => key === key1);
