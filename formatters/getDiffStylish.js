@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import getDiffTree from './getDiffTree.js';
 
 const getDiffStylish = (obj1, obj2) => {
