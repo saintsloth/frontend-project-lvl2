@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-export const getDiffPlain = (obj1, obj2, start = '') => {
+const getDiffPlain = (obj1, obj2, start = '') => {
   const keys = _.union(_.keys(obj1), _.keys(obj2)).sort();
   let result = '';
   keys.forEach((key) => {
@@ -33,3 +33,5 @@ export const getDiffPlain = (obj1, obj2, start = '') => {
   });
   return result;
 };
+
+export default getDiffPlain;

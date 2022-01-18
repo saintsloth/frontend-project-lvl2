@@ -6,10 +6,8 @@ const getDiff = (obj1, obj2) => {
   keys.forEach((key) => {
     const findKey1 = _.find(_.entries(obj1), ([key1]) => key === key1);
     const findKey2 = _.find(_.entries(obj2), ([key2]) => key === key2);
-    let value1 = '';
-    let value2 = '';
-    if (findKey1) [, value1] = findKey1;
-    if (findKey2) [, value2] = findKey2;
+    const [, value1] = findKey1 ?? '';
+    const [, value2] = findKey2 ?? '';
     if (_.isObject(value1) && _.isObject(value2)) {
       result[`${key}`] = getDiff(value1, value2);
     } else {
@@ -24,14 +22,16 @@ const getDiff = (obj1, obj2) => {
   return result;
 };
 
-export const getDiffStylish = (obj1, obj2) => {
-  let result = getDiff(obj1, obj2);
-  result = JSON.stringify(result, null, 4);
-  result = result.replace(/ ""/g, '');
-  result = result.replace(/,\s/g, '\n');
-  result = result.replace(/"/g, '');
-  result = result.replace(/\s\s\+/g, '+');
-  result = result.replace(/\s\s-/g, '-');
-  result = result.replace(/:\n/g, ': \n');
-  return result;
+const getDiffStylish = (obj1, obj2) => {
+  const result1 = getDiff(obj1, obj2);
+  const result2 = JSON.stringify(result1, null, 4);
+  const result3 = result2.replace(/ ""/g, '');
+  const result4 = result3.replace(/,\s/g, '\n');
+  const result5 = result4.replace(/"/g, '');
+  const result6 = result5.replace(/\s\s\+/g, '+');
+  const result7 = result6.replace(/\s\s-/g, '-');
+  const result8 = result7.replace(/:\n/g, ': \n');
+  return result8;
 };
+
+export default getDiffStylish;

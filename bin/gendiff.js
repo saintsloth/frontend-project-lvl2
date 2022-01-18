@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { program } from 'commander';
-import getDiff from "../src/getDiff.js";
+import getDiff from '../src/getDiff.js';
 
 program
   .option('-V, --version', 'output the version number')
@@ -9,8 +9,7 @@ program
   .description('Compares two configuration files and shows a difference')
   .arguments('<filepath1> <filepath2>')
   .action((filepath1, filepath2) => {
-    const format = program.opts().format;
-    console.log(getDiff(filepath1, filepath2, format))
+    console.log(getDiff(filepath1, filepath2, program.opts().format));
   });
 
 program.parse(process.argv);
